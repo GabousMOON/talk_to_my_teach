@@ -6,13 +6,19 @@
 <p style="text-align: left;">
     Teachers are easily one of the most underappreciated roles in our society. They lay the cornerstones of our society,
     yet more often then not, their compensation is criminally underwhelming. There are challenges that are part of the
-    job that you were probably not very well trained for and you might feel unprepared for those types of situations.
-    The goal of this page is to enable you educators with the right resources to tackle the toughest situations when it
-    comes to communicating with students, parents, or administration.
+    job that you were probably not very well trained for and you might feel unprepared for those types of situations. In
+    the research community, a consensus has been reached that "Educators are seen to have an impact on student
+    achievement, motivation, adjustment, behavior, and social-emotional well-being. Moreover, as teachers are
+    seen as a vital element of school climate, the interactions between teachers and students can have a significant
+    effect on students' success”<a
+        href='https://doi-org.ezproxy.uvu.edu/10.3390/socsci11070274'>(Burrell-Craft)</a>."The goal of this page is to
+    enable you educators with the right
+    resources to tackle the toughest situations when it comes to communicating with students, parents, or
+    administration.
 </p>
 
 {% for Question in questions %}
-<article class="media content-section" style="background-color:rgb(212, 212, 212)">
+<article class="media content-section">
     <div class="media-body">
         <h3 class="article-title">{{Question.problem}}</h3>
         {% for Resource in teacherResources %}

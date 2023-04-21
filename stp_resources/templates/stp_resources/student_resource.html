@@ -5,12 +5,16 @@
 <h1>Student Resources</h1>
 <p style="text-align: left;">
     Here is a list of resources that we have compiled to help you navigate your communication needs between you, your
-    parents, and your teachers. It may seem overwhelming the amount of resources there are out there, so be patient and
+    parents, and your teachers. Research has shown that the stronger the relationship between a student and their
+    teacher, the less bullying, vicitimization, and overall hostile experiences you will experience as well as you will
+    have increased test scores and better overall satisfaction of your education. <a
+        href="https://scholarworks.uvm.edu/mgreview/vol8/iss1/5/">(School Psychology Review)</a>It may seem overwhelming
+    the amount of resources there are out there, so be patient and
     take your time, and you don't have to explore all of them by any means.
 </p>
 
 {% for Question in questions %}
-<article class="media content-section" style="background-color:rgb(212, 212, 212)">
+<article class="media content-section">
     <div class="media-body">
         <h3 class="article-title">{{Question.problem}}</h3>
         {% for Resource in studentResources %}
