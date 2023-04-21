@@ -1,0 +1,30 @@
+{% extends "stp_resources/base.html" %}
+
+
+{% block content %}
+<h1>Parent Resources</h1>
+<p style="text-align: left;">
+    Navigating your child's adolesence is nothing short of intimidating. It feels like you have a volatile bomb just
+    ready to explode at any moment's notice and you don't know what to say, how to say it, or how to get your kid to
+    listen. Maybe you feel like a teacher is undermining what you've been teaching your child so now you are stuck
+    between a rock and hard place. How do you talk to the teacher then? This page is a compiled list of resources that
+    will help you navigate your child's education.
+</p>
+
+{% for Question in questions %}
+<article class="media content-section" style="background-color:rgb(212, 212, 212)">
+    <div class="media-body">
+        <h3 class="article-title">{{Question.problem}}</h3>
+        {% for Resource in parentResources %}
+        {% if Resource.question.problem == Question.problem %}
+        <a class='article-title' href="{{ Resource.link }}" style="font-size: 20px;">{{ Resource.Name }}</a>
+        <ul>
+            <li style="font-size: 15px;">{{ Resource.Summary }}</li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+</article>
+{% endfor %}
+
+{% endblock content %}

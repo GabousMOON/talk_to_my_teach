@@ -1,0 +1,30 @@
+{% extends "stp_resources/base.html" %}
+
+
+{% block content %}
+<h1>Teacher Resources</h1>
+<p style="text-align: left;">
+    Teachers are easily one of the most underappreciated roles in our society. They lay the cornerstones of our society,
+    yet more often then not, their compensation is criminally underwhelming. There are challenges that are part of the
+    job that you were probably not very well trained for and you might feel unprepared for those types of situations.
+    The goal of this page is to enable you educators with the right resources to tackle the toughest situations when it
+    comes to communicating with students, parents, or administration.
+</p>
+
+{% for Question in questions %}
+<article class="media content-section" style="background-color:rgb(212, 212, 212)">
+    <div class="media-body">
+        <h3 class="article-title">{{Question.problem}}</h3>
+        {% for Resource in teacherResources %}
+        {% if Resource.question.problem == Question.problem %}
+        <a class='article-title' href="{{ Resource.link }}" style="font-size: 20px;">{{ Resource.Name }}</a>
+        <ul>
+            <li style="font-size: 15px;">{{ Resource.Summary }}</li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+</article>
+{% endfor %}
+
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends "stp_resources/base.html" %}
+
+
+{% block content %}
+<h1>Student Resources</h1>
+<p style="text-align: left;">
+    Here is a list of resources that we have compiled to help you navigate your communication needs between you, your
+    parents, and your teachers. It may seem overwhelming the amount of resources there are out there, so be patient and
+    take your time, and you don't have to explore all of them by any means.
+</p>
+
+{% for Question in questions %}
+<article class="media content-section" style="background-color:rgb(212, 212, 212)">
+    <div class="media-body">
+        <h3 class="article-title">{{Question.problem}}</h3>
+        {% for Resource in studentResources %}
+        {% if Resource.question.problem == Question.problem %}
+        <a class='article-title' href="{{ Resource.link }}" style="font-size: 20px;">{{ Resource.Name }}</a>
+        <ul>
+            <li style="font-size: 15px;">{{ Resource.Summary }}</li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+</article>
+{% endfor %}
+
+{% endblock content %}
